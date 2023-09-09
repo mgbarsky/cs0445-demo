@@ -1,7 +1,7 @@
 // CS 0445 Spring 2023
 // Simple class (not using graphics) to review some of the
 // syntax and semantics of Java classes
-public class MyRectangle
+public class MyRectangle implements Comparable<MyRectangle>
 {
 	private int xOrig, yOrig;    // most data is declared to be
 	private int width, height;   // private
@@ -17,6 +17,7 @@ public class MyRectangle
 		return (width * height);   // to indirectly access an
 	}                              // object.  This is an accessor.
 
+	
 	public String toString()       // toString method allows for
 	{                              // text "output" of an object
 
@@ -65,5 +66,13 @@ public class MyRectangle
 
 	public void setHeight(int h)
 	{	height = h;
+	}
+	
+	public int compareTo(MyRectangle other) {
+		if (this.area() > other.area())
+			return 1;
+		if (this.area() > other.area())
+			return -1;
+		return 0;
 	}
 }
