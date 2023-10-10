@@ -95,7 +95,7 @@ public class LinkedListWithIterator<T> implements Iterable<T> {
          assert !isEmpty();
          
          // Case 1: remove first entry
-         if (givenPosition == 1)   {
+         if (givenPosition == 0)   {
             result = head.getData();       // Save entry to be removed
             head = head.getNext();
          }
