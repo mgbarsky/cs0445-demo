@@ -3,7 +3,7 @@
 //[most common value] in a list of Integers.
 import java.util.*;
 
-public class MedianIterators {
+public class ModeIterators {
 	public static void main(String [] args)
 	{
 		List<Integer> L1 = new LinkedList<Integer>(); 
