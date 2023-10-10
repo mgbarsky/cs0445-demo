@@ -70,7 +70,7 @@ public class LinkedListWithIterator<T> implements Iterable<T> {
 			Node<T> newNode = new Node<T>(newEntry);
 			
 			// Case 1: new position is 0
-			if (newPosition == 1) 	{
+			if (newPosition == 0) 	{
 				newNode.setNext(head);
 				head = newNode;
 			}
