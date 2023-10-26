@@ -84,12 +84,12 @@ public class SimplePower {
 			int recResult = 0;
 			if (N % 2 == 0) { // N is even
 				recResult = recResultHalf*recResultHalf;
-				System.out.println(indent + "Case even: Returning: "+ 
+				System.out.println(indent + "N=" + N + " Case even: Returning: "+ 
 						recResultHalf +"*" + recResultHalf + "="+ recResult);											
 			}
 			else {
 				recResult =  X*recResultHalf*recResultHalf;	
-				System.out.println(indent + "Case odd: Returning: "+ X +"*" +
+				System.out.println(indent + "N=" + N + " Case odd: Returning: "+ X +"*" +
 						recResultHalf +"*" + recResultHalf + "="+ recResult);		
 			}
 			return recResult;
