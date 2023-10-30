@@ -96,6 +96,37 @@ public class SimplePower {
 		}					
 	}
 	
+	//BAD divide-and-conquer version of power with trace - too many recursive calls O(N) running time
+	public static int powerRecursiveBadDCTr(int X, int N, int level) {
+		String indent = indent(level);  // Get a string of spaces to show
+		// level of the recursive call through indenting
+
+		System.out.println(indent + "Power: "+ X +"^" + N);
+		if (N == 0)	{
+			System.out.println(indent + "Base case: N = " + N);
+			System.out.println(indent + "Returning 1");
+			return 1;
+		}
+		else	{
+			System.out.println(indent + "Calling Power: "+ X +"^(" + N + "/2)");			
+			int recResult1 = powerRecursiveBadDCTr (X, N/2, level+1);
+			System.out.println(indent + "Calling Power: "+ X +"^(" + N + "/2)");
+			int recResult2 = powerRecursiveBadDCTr (X, N/2, level+1);
+			int recResult = recResult1 * recResult2;
+			if (N % 2 == 0) { // N is even				
+				System.out.println(indent + "N=" + N + " Case even: Returning: "+ 
+						+ recResult);											
+			}
+			else {
+				System.out.println(indent + "N=" + N + " Case odd: Returning: "+ X +"*" +
+						recResult);		
+				recResult =  X*recResult;	
+				
+			}
+			return recResult;
+		}					
+	}
+	
 	public static void main (String [] args) throws IOException	{
 		BufferedReader BR = new BufferedReader(
 				new InputStreamReader(System.in));
@@ -114,9 +145,14 @@ public class SimplePower {
 		System.out.println("\nDivide and conquer version");
 		result = powerRecursiveDC(x, n);	
 		System.out.println("Divide and conquer Power " + x +"^" + n + " = " + result);
+		
 		System.out.println("\nTracing divide-and-conquer version:\n");
 		result = powerRecursiveDCTr (x, n, 0);
 		System.out.println("Divide and conquer Power with trace " + x +"^" + n + " = " + result);
+		
+		System.out.println("\nTracing BAD divide-and-conquer version:\n");
+		result = powerRecursiveBadDCTr (x, n, 0);
+		System.out.println("Divide and conquer Bad Power with trace " + x +"^" + n + " = " + result);
 	}
 
 }
