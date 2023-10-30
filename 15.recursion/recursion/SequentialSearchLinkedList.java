@@ -32,7 +32,7 @@ public class SequentialSearchLinkedList {
 	// Iterative sequential search of the list.  Note that we do not need a new curr
 	// variable here since "head" is a parameter and reassigning "head" will not affect
 	// the caller variable (passing by copy)
-	public static <T extends Comparable<? super T>> int linkedSearch(Node<T> head, T key) {
+	public static <T extends Comparable<T>> int linkedSearch(Node<T> head, T key) {
 		int loc = 0;
 		while (head != null)	{
 			if (head.data.compareTo(key) == 0)

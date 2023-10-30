@@ -39,7 +39,7 @@ public class SequentialSearch {
 	// end of the array.  Recursive implementations often need additional
 	// parameters so that more state information can be passed from one
 	// call to the next.
-	public static <T extends Comparable<? super T>> int recSeqSearch(T [] a, T key, int index)	{
+	public static <T extends Comparable<T>> int recSeqSearch(T [] a, T key, int index)	{
 		if (index >= a.length)	// base case not found 
 			return -1;
 		else if (a[index].compareTo(key) == 0)	// base case found
