@@ -30,7 +30,7 @@ public class FrequencyTest  {
         long endTime = System.nanoTime();
 
         long duration = (endTime - startTime)/1000000;  //divide by 1000000 to get milliseconds.
-        System.out.println("Naively counted in: "+ duration + " ms" );
+        System.out.println("Naive count in: "+ duration + " ms" );
         
         startTime = System.nanoTime();
         
@@ -39,6 +39,6 @@ public class FrequencyTest  {
         endTime = System.nanoTime();
 
         duration = (endTime - startTime)/1000000;  //divide by 1000000 to get milliseconds.
-        System.out.println("Better counted in: "+ duration + " ms" );
+        System.out.println("Smart count in: "+ duration + " ms" );
 	}
 }
